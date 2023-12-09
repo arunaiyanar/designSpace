@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Codystar:wght@300&family=Nova+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oregano&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Oregano', cursive;
+    text-shadow: 5px 5px 20px rgb(236, 226, 226);
+    color: aliceblue;
+}
+h2{
+    font-family: 'Oregano', cursive;
+}
+
+img{
+    filter: brightness(55%);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh; /* Adjust as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.form-container {
+    background: transparent;
+    margin-top: 100px;
+    box-shadow: -3px -3px 9px #4ce290a2,
+              3px 3px 10px rgba(69, 168, 214, 0.671);
+    border-radius: 10%;
+    width: 330px;
+ 
+    border-radius: 10px;
+    padding: 50px 50px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.form-container label {
+    display: block;
+    /* margin: 10px 0; */
+    font-size: x-large;
+}
+
+.form-container input {
+    width: 100%;
+    background: transparent;
+    padding: 10px;
+    border-color: rgb(28, 157, 218);
+    border-radius: 5px;
+    box-shadow: -3px -3px 9px #19d6b7a2,
+              3px 3px 20px rgba(35, 221, 206, 0.671);
+    width: 100%;
+}
+
+.form-container button {
+    font-size: large;
+    background: transparent;
+    border-color: rgb(35, 162, 212);
+    box-shadow: -3px -3px 9px #4596c5a2,
+              3px 3px 10px rgba(35, 221, 206, 0.671);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 50%;
+}
+
+.error-message {
+    color: red;
+}
+
+.form-container button:hover {
+    background-color: #70c2e9;
+  }

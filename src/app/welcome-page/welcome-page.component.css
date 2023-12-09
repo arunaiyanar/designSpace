@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Codystar:wght@300&family=Nova+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oregano&display=swap');
+
+.ComapanyTitle{
+  text-align: center;
+    font-family: 'Nova Mono', monospace;
+    background-image: linear-gradient(
+    -255deg,
+    rgb(248, 240, 240) 10%,
+    #44107a 39%,
+    #79df27 67%,
+    #1589FF 80%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #b9db5b;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 3s linear infinite;
+  display: inline-block;
+      font-size: 40px;
+    
+}
+span{
+  white-space: nowrap;
+}
+.background-image { /* Add the path to your background image */
+    filter: brightness(70%);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh; /* Adjust as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.welcome-section {
+    font-family: 'Oregano', cursive;
+    text-shadow: 5px 5px 20px rgb(236, 226, 226);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 50%;
+    font-size: xx-large;
+  }
+
+  .note{
+    animation: fadeIn 5s;
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .button1, .button2 {
+    font-size: x-large;
+    font-family: 'Oregano', cursive;
+    background-color: transparent;
+    border: 2px solid #5CB3FF;
+    
+    border-radius: 16px;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    color: #f5f3f3;
+  }
+  .button1:hover, .button2:hover {
+    box-shadow: 0 0 20px 0 #5CB3FF inset, 0 0 20px 5px #5CB3FF;
+    border: 3px solid #5CB3FF;
+  }
+
