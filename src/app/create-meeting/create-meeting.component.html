@@ -2,20 +2,29 @@
     <img src="./assets/Images/ex.jpg">
     <main>
       <h1 class="title">Create a Meeting Schedule</h1>
-      <form>
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <label for="meetingTitle">Meeting Title:</label>
-        <input type="text" id="meetingTitle" name="meetingTitle" required>
+        <input type="text" id="meetingTitle" formControlName="meetingTitle">
+        <div *ngIf="meetingTitle?.hasError('required') && (meetingTitle?.dirty || meetingTitle?.touched)" [ngStyle]="{'color': 'Red','text-shadow':'5px 5px 10px', 'font-size':'x-large'}">
+          Username is required
+        </div>
   
         <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required>
+        <input type="date" id="date" formControlName="date">
+        <div *ngIf="date?.hasError('required') && (date?.dirty || date?.touched)" [ngStyle]="{'color': 'Red','text-shadow':'5px 5px 10px', 'font-size':'x-large'}">
+          Date is required
+        </div>
   
         <label for="time">Time:</label>
-        <input type="time" id="time" name="time" required>
+        <input type="time" id="time" formControlName="time">
+        <div *ngIf="time?.hasError('required') && (time?.dirty || time?.touched)" [ngStyle]="{'color': 'Red','text-shadow':'5px 5px 10px', 'font-size':'x-large'}">
+          Time is required
+        </div>
   
         <label for="location">Location:</label>
         <input type="text" id="location" name="location">
   
-        <button type="submit" (click)="meetingFunc(); navigateToWelcomePage()">Schedule Meeting</button>
+        <button type="submit" [disabled]="signupForm.invalid" (click)="meetingFunc(); navigateToWelcomePage()">Schedule Meeting</button>
       </form>
       <button class="button1" (click)="navigateToWelcomePage()">GO Back</button>
     </main>

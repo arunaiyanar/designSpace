@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-meeting',
@@ -7,7 +8,16 @@ import { Router } from '@angular/router';
   styleUrl: './create-meeting.component.css'
 })
 export class CreateMeetingComponent {
-  constructor(private router: Router) {}
+  signupForm: FormGroup;
+
+  constructor(private router: Router, private fb: FormBuilder) {
+    this.signupForm = this.fb.group({
+      meetingTitle: ['', Validators.required],
+      date: ['', [Validators.required]],
+      time: ['', [Validators.required]],
+    });
+
+  }
   public meetingmessage = "Meeting has been scheduled";
 
   navigateToWelcomePage() {
@@ -16,5 +26,22 @@ export class CreateMeetingComponent {
 
   public meetingFunc() {
     alert(this.meetingmessage);
+  }
+
+  get meetingTitle() {
+    return this.signupForm.get('meetingTitle');
+  }
+
+  get date() {
+    return this.signupForm.get('date');
+  }
+
+  get time() {
+    return this.signupForm.get('time');
+  }
+
+  onSubmit() {
+    // Handle form submission
+    console.log('Form submitted:', this.signupForm.value);
   }
 }
